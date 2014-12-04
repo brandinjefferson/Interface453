@@ -7,8 +7,8 @@ default from: 'brandinui@gmail.com'
   #
   def account_activation(request)
     @request = request
-    email = @request.clid + '@louisiana.edu'
-    mail to: email, subject: "Room Request Confirmation"
+    @email = @request.clid + '@louisiana.edu'
+    mail to: 'brandinjefferson93@gmail.com', subject: "Room Request Confirmation"
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
