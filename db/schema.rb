@@ -28,10 +28,10 @@ ActiveRecord::Schema.define(version: 20141203080152) do
     t.string   "gender"
     t.string   "building"
     t.string   "room"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "activation_digest"
-    t.boolean  "activated",         default: true
+    t.boolean  "activated",         default: false
     t.datetime "activated_at"
   end
 

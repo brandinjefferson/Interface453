@@ -17,8 +17,13 @@ Rails.application.routes.draw do
   delete 'adminlogout' => 'sessions#destroy'
   get 'requestqueue' => 'requests#index'
   get 'createadmin' => 'administrators#new'
-  delete 'requestaccept' => 'request_approvals#destroy'
-  delete 'requestdeny' => 'request_denials#destroy'
+  get 'requests/:id' => 'requests#show', as: :decision
+  get 'deciderequest' => 'requests#decide_request'
+  
+  #post 'requestaccept/:request' => 'request_approvals#destroy', as: :requestaccept
+  #delete 'requestaccept/ :request' => 'request#destroy'
+  #post 'requestdeny/ :id/' => 'request_denials#destroy', as: :requestdeny
+  #delete 'requestdeny/ :id/' => 'request#destroy'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

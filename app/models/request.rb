@@ -16,7 +16,19 @@ class Request < ActiveRecord::Base
   end
   
   def send_notification_email
-    UserNotifier.account_activation(self)
+    UserNotifier.account_activation(self).deliver_now!
+  end
+  
+  def send_accept_email
+    UserNotifier.request_approved(self).deliver_now!
+  end
+  
+  def send_deny_email
+    UserNotifier.request_denied(self).deliver_now!
+  end
+  
+  def remove_request(parameter)
+    Request.find(parameter).destroy
   end
   
     def Request.digest(string)

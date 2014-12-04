@@ -26,8 +26,8 @@
 	        <td></td>
 	        <td><%= request.building %></td>
 	        <td><%= request.room %></td>
-	        <td><%= button_to 'Accept', requestaccept_path(request), method: :delete, data: {confirm: "Accept this request?"}%></td>
-	        <td><%= button_to 'Destroy', requestdeny_path(request), method: :delete, data: { confirm: 'Deny this request?' } %></td>
+	        <td><%= link_to 'Accept', deciderequest_path(request, :accept => true, :id => request.id)  %></td>
+			<td><%= link_to 'Deny', deciderequest_path(request, :accept => false, :id => request.id) %></td>
 	      </tr>      
 	      <%end %>
     <% end %>
@@ -35,4 +35,4 @@
 </table>
 <%= will_paginate %>
 <br>
-<%= link_to 'New Administrator', new_administrator_path,class="btn" %>
+<%= link_to 'New Administrator', new_administrator_path,class:"btn" %>
