@@ -5,9 +5,8 @@ Rails.application.routes.draw do
 
   resources :administrators
   resources :account_activations, only: [:edit]
-  resources :request_approvals, only: [:destroy]
-  resources :request_denials, only: [:destroy]
   resources :requests
+  resources :students
 
   root 'requests#new'
   get 'tohelp' => 'static_pages#help'
@@ -19,6 +18,7 @@ Rails.application.routes.draw do
   get 'createadmin' => 'administrators#new'
   get 'requests/:id' => 'requests#show', as: :decision
   get 'deciderequest' => 'requests#decide_request'
+  get 'thisisretardedlylong/howdidyougethere' => 'administrators#new'
   
   #post 'requestaccept/:request' => 'request_approvals#destroy', as: :requestaccept
   #delete 'requestaccept/ :request' => 'request#destroy'

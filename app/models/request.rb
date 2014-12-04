@@ -11,8 +11,8 @@ class Request < ActiveRecord::Base
   validates :building, presence: true
   
   def activate_request
-    req.update_attribute(:activated,    true)
-    req.update_attribute(:activated_at, Time.zone.now)
+    update_attribute(:activated,    true)
+    update_attribute(:activated_at, Time.zone.now)
   end
   
   def send_notification_email
