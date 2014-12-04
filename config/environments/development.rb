@@ -19,12 +19,12 @@ Rails.application.configure do
   host = 'localhost:3000'
   config.action_mailer.default_url_options = { host: host }
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :address        => 'smtp.mandrillapp.com',
+  ActionMailer::Base.smtp_settings = {
+    :address        => 'smtp.sendgrid.net',
     :port           => '587',
-    :authentication => 'login',
-    :user_name      => 'brandinui@gmail.com',
-    :password       => 'Tpcz8kLIdLcqP2XDni25Dw',
+    :authentication => 'plain',
+    :user_name      => 'brandinjefferson',
+    :password       => 'bjej9397',
     :domain         => 'heroku.com',
     :enable_starttls_auto => true
   }

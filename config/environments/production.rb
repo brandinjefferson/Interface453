@@ -4,12 +4,13 @@ Rails.application.configure do
   host = 'warm-tor-9384.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
   config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.mandrillapp.com',
+    :address        => 'smtp.sendgrid.net',
     :port           => '587',
-    :authentication => :plain,
-    :user_name      => ENV['brandinui@gmail.com'],
-    :password       => ENV['TWpe757ElMkJuzQ12sjjSA'],
+    :authentication => 'plain',
+    :user_name      => ENV['brandinjefferson'],
+    :password       => ENV['bjej9397'],
     :domain         => 'heroku.com',
     :enable_starttls_auto => true
   }
