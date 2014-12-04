@@ -1,5 +1,5 @@
 class AdministratorsController < ApplicationController
-  before_action :set_administrator, only: [:show, :edit, :update, :destroy]
+  before_action :admin_logged_in, only: [:index,:show, :edit, :update, :destroy,:new]
 
   # GET /administrators
   # GET /administrators.json
@@ -28,7 +28,7 @@ class AdministratorsController < ApplicationController
     @administrator = Administrator.new(administrator_params)
     if @administrator.save
       flash[:success] = 'New administrator created.'
-      redirect_to @administrator
+      redirect_to requestqueue_path
     else
       render 'new'
     end

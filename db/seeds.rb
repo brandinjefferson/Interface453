@@ -24,3 +24,7 @@ Request.create(clid: "abc1234",
                 activated_at: Time.zone.now,
                 activated: false)
 end
+
+Administrator.create(username: "kingofthehill",
+                      password: "password",
+                      password_confirmation: "password")

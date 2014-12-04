@@ -1,3 +1,4 @@
+#Should be named RequestActivationsController
 class AccountActivationsController < ApplicationController
 
   def edit

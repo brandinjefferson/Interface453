@@ -16,7 +16,7 @@ class Request < ActiveRecord::Base
   end
   
   def send_notification_email
-    UserNotifier.account_activation(self).deliver
+    UserNotifier.account_activation(self)
   end
   
     def Request.digest(string)
